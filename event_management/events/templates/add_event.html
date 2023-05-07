@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<center>
+
+    <div class="" style="background-image: url('https://www.pixelstalk.net/wp-content/uploads/images6/October-2022-Calendar-Wallpaper-Desktop.jpg'); background-size: 100% 100%; background-repeat: no-repeat; background-attachment: fixed;">
+        <h2 style="font-weight: bolder;">Add  Event</h2>
+        <div class=" d-flex p-2 ml-5 shadow just bg-body rounded justify-content-center  " style="width: 52%;  color: white ;">
+            <div class="" style="width: 175%; ">
+<br/>
+{% if submitted %}
+    <h1 style="color:black">
+        Your Event Was submitted
+        Successfully!!!
+    </h1>
+
+{% else %}
+
+        <form action="" method="POST" style="margin-top:-25px ; color:black; font-weight :bold; " >
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <input type="submit" value="Submit" style="background-color:aqua; /* Green */
+            border: none;
+            color:black;
+            font-weight:bold;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px;">
+        </form>
+    </center>
+        {% endif %}
+{% endblock %}

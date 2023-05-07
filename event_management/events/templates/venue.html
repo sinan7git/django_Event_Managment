@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 style="text-align: center; font-weight:bolder;">Venues List</h1>
+<hr>
+<br/>
+<table class="table table-hover ">
+    {% for venue in venue_list %}
+    <tr>
+  <td> <a href="{% url 'show-venue' venue.id %}"> {{ venue }}</a><br/></td>
+  <td>
+    <a href="{% url 'update-venue' venue.id %}" class="btn btn-outline-secondary btn-sm">Edit</a>
+    <a href="{% url 'delete-venue' venue.id %}" class="btn btn-outline-danger btn-sm">Delete</a>
+  </td>
+</tr>
+    {% endfor %}
+</table>
+{% endblock %}

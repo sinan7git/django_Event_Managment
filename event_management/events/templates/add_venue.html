@@ -1,0 +1,46 @@
+{% extends 'base.html'  %}
+
+{% block content %}
+<center>
+
+
+
+<div class="" style="background-image: url('https://codeshack.io/web/img/examples/css3-pixelated-background-scroll.png'); background-size: 100% 100%; background-repeat: no-repeat; background-attachment: fixed;">
+<h2 style="font-weight: bolder; color:aliceblue">Add Venue</h2>
+<div class=" d-flex p-4 ml-5 shadow just bg-body rounded justify-content-center  " style="width: 52%;  color: white ;">
+    <div class="" style="width: 75%; ">
+<br/><br/>
+{% if submitted %}
+    <h3 style="color: aqua;">
+    Your Venue Was submitted
+    Successfully!!! 
+
+</h3>
+<a style="background-color:chartreuse; /* Green */
+border: none;
+color:black;
+padding: 15px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+font-weight: bold;
+border-radius: 4px;margin-top:25px"
+ href="/add_event"
+>Goto Events</a>
+{% else %}
+
+        <form action="" method="POST" style="margin-top:-25px ; color:rgb(255, 255, 255); font-weight :bold; ">
+            {% csrf_token %}
+
+            {{ form.as_p}}
+
+            <input  type="submit" value="Submit" class="btn btn-info mt-3" style="color: black;">
+            
+        </form>
+    </div>
+        </div>
+    </div>
+    </center>
+        {% endif %}
+        {% endblock %}

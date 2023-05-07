@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 style="text-align: center; font-weight:bolder;">Events List</h1>
+    <hr>
+        {% for event in event_list %}
+        <div class="card">
+            <div class="card-header">
+                {{ event }}
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"><li>{{ event.venue }}</li></h5>
+              <p class="card-text">
+                <ul>
+                    <li>{{ event.name }}</li>
+                    <li>{{ event.event_date }}</li>
+                    <li>{{ event.event_type }}</li>
+                    <li>{{ event.description }}</li>
+                    </ul>
+              </p>
+             
+            </div>
+            <div class="card-footer text-muted">
+              <a href="{% url 'update-event' event.id %}" class="btn btn-outline-warning btn-sm">Update Event</a> 
+              <a href="{% url 'delete-event' event.id %}" class="btn btn-outline-danger btn-sm">Delete Event</a> 
+            </div>
+          </div>
+       
+        <br/>
+     {% endfor %}
+   
+    
+{% endblock %}

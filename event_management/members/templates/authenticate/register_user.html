@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body {background: #f4f4f4;}
+    </style>
+</head>
+<body>
+
+{% block content %}
+<center>
+
+  <div class="" style="background-image: url('https://png.pngtree.com/background/20210714/original/pngtree-beautiful-cityscape-with-night-view-at-sunset-background-picture-image_1207012.jpg'); background-size: 100% 100%; background-repeat: no-repeat; background-attachment: fixed;">
+      <h2 style="font-weight: bolder; color:white">Register Now</h2>
+      <div class=" d-flex p-2 ml-5 shadow just bg-body rounded justify-content-center  " style="width: 52%; font-weight: bold; color:greenyellow;">
+          <div class="" style="width: 175%; ">
+<br/>
+<form action="{% url 'register-user' %}" method="POST" >
+    {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <input type="submit" value="submit" class="btn-danger mt-3 btn-secondary ">
+  </button>
+</div>
+
+</form>
+</body>
+</html>
+  {% endblock %}
